@@ -3,15 +3,15 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using ClinAgendaDemo.src.Application.DTOs.Appointment;
-using ClinAgendaDemo.src.Core.Interfaces;
+using ClinAgenda.src.Application.DTOs.Appointment;
+using ClinAgenda.src.Core.Interfaces;
 using Dapper;
 using MySql.Data.MySqlClient;
 
-namespace ClinAgendaDemo.src.Infrastructure.Repositories
+namespace ClinAgenda.src.Infrastructure.Repositories
 {
     public class AppointmentRepository : IAppointmentRepository
-   {
+    {
         private readonly MySqlConnection _connection;
 
         public AppointmentRepository(MySqlConnection connection)
@@ -96,7 +96,7 @@ namespace ClinAgendaDemo.src.Infrastructure.Repositories
             int rowsAffected = await _connection.ExecuteAsync(query, patient);
             return rowsAffected > 0;
         }
-        public async Task<int>DeleteAsync(int appointmentId)
+        public async Task<int> DeleteAsync(int appointmentId)
         {
             string query = "DELETE FROM Appointment WHERE ID = @AppointmentId";
             var rowsAffected = await _connection.ExecuteAsync(query, new { AppointmentId = appointmentId });

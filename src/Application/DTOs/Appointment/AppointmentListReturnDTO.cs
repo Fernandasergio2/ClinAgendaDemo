@@ -2,11 +2,11 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using ClinAgenda.src.Application.DTOs.Doctor;
+using ClinAgenda.src.Application.DTOs.Patient;
 using ClinAgenda.src.Application.DTOs.Specialty;
-using ClinAgendaDemo.src.Application.DTOs.Doctor;
-using ClinAgendaDemo.src.Application.DTOs.Patient;
 
-namespace ClinAgendaDemo.src.Application.DTOs.Appointment
+namespace ClinAgenda.src.Application.DTOs.Appointment
 {
     public class AppointmentListReturnDTO
     {
